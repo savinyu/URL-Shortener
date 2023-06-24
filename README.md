@@ -11,3 +11,6 @@ Dependencies
   3. MongoDB
   4. Shortid (for generating unique short URLs)
   5. bcrypt (for password hashing)
+
+To install the desired dependencies use the following command:
+npm install 
