@@ -26,13 +26,13 @@ app.get('/',async (req,res) =>{
 })
 
 app.post('/shortenedUrls' ,async (req,res) =>{
-        // await ShortenedURL.create({full: req.body.fullUrl})
-        const { fullUrl, notes } = req.body
-            res.redirect('/')
+    const { fullUrl, notes } = req.body
+    await ShortenedURL.create({ notes,full: req.body.fullUrl})
         const shortenedUrl = new ShortenedURL({
             full: fullUrl,
             notes: notes
         })
+        res.redirect('/')
 })
 
 app.get('/:shortenedUrl', async (req,res)=>{
@@ -44,4 +44,7 @@ app.get('/:shortenedUrl', async (req,res)=>{
     res.redirect(shortenedUrl.full)
 })
 
-app.listen( process.env.PORT || 5000);
+const port = 5000;
+app.listen( process.env.PORT || port, ()=> {
+    console.log('Server working fine at', port  );
+});
