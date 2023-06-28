@@ -20,32 +20,59 @@
   <title>URL Shortener</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center text-secondary"><b>URL Shortener</b> </h1>
-        <form action="/shortenedUrls" method="POST" class="my-4 form-inline">
-            <label for="fullUrl" class="visually-hidden">Your Url here</label>
-            <input required placeholder="Enter Link here" type="url" name="fullUrl" id="fullUrl" class="form-inline col-auto col-sm-7  col-form-label-sm  " autocomplete="url">
-            <button class="btn btn-outline-success " type="submit">Shorten</button>
-            <br><br>
-            <label for="notes" > Notes</label>
-            <input type="text" name="notes" id="notes" placeholder="Enter Notes here:" class="form-inline form-control-sm ">
-            <!-- <label for="notes" class=""> Notes :</label>   -->
-            <!-- <input type="text" placeholder="Notes" name="notes" id="notes" class="form-label form-control-sm"> -->
-            <!-- <img src="https://d19fbfhz0hcvd2.cloudfront.net/PR/wp-content/uploads/2016/09/10_UsingURLShorteners-1024x576.jpg" alt="scissors"> -->
-        </form>
-        <div class="form-outline me-3 d-flex">
-
-            <form action="/" method="GET" class="form-inline ">
-                <label for="search" class="visually-hidden">Search</label>
-                <button class="btn  btn-outline-primary" type="submit" > Search</button>
-                <input type="text" placeholder="Search here" class="form-inline form-control-sm form-label  col-sm-7 " name="search" id="search" >
-                
-                
-                
-                <br>
-            </form>
-        </div>
     
+        <section class="vh-50" >
+          <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col col-xl-9">
+                <div class="card" style="border-radius: 1rem;">
+                  <div class="row g-0">
+                    <div class="col-md-6 col-lg-5 d-none d-md-block">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                        alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                    </div>
+                    <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                      <div class="card-body p-4 p-lg-5 text-black">
+      
+                        <!-- Your existing form code -->
+                        <div class="container">
+                            <h1 class="text-center text-secondary"><b>URL Shortener</b> </h1>
+                            <form action="/shortenedUrls" method="POST" class="my-4 form-inline">
+                                <label for="fullUrl" class="visually-hidden">Your Url here</label>
+                                <input required placeholder="Enter Link here" type="url" name="fullUrl" id="fullUrl" class="form-inline col-auto col-sm-7  col-form-label-sm  " autocomplete="url">
+                                <button class="btn btn-outline-success " type="submit">Shorten</button>
+                                <br><br>
+                                <input type="text" name="notes" id="notes" placeholder="Enter Notes here:" class="form-inline form-control-sm ">
+                                <label for="notes" > &nbsp;&nbsp;<b>Notes</b></label>
+                                <!-- <label for="notes" class=""> Notes :</label>   -->
+                                <!-- <input type="text" placeholder="Notes" name="notes" id="notes" class="form-label form-control-sm"> -->
+                                <!-- <img src="https://d19fbfhz0hcvd2.cloudfront.net/PR/wp-content/uploads/2016/09/10_UsingURLShorteners-1024x576.jpg" alt="scissors"> -->
+                            </form>
+                            <div class="form-outline me-3 d-flex">
+                    
+                                <form action="/" method="GET" class="form-inline ">
+                                    <label for="search" class="visually-hidden">Search</label>
+                                    <input type="text" placeholder="Search here" class="form-inline form-control-sm form-label  col-sm-7 " name="search" id="search" >
+                                    <button class="btn  btn-outline-primary" type="submit" > Search</button>
+                                    
+                                    
+                                    
+                                    <br>
+                                </form>
+                            </div>
+      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+      
+<div class="container">
+
     <table class="table table-striped table-hover table-bordered border-dark table-responsive-xxl table-info">
         
         <caption> <b>Data of all URLs</b></caption>
@@ -72,6 +99,7 @@
                 <% }) %>
             </tbody>
         </table>
+    </div>
     </div>
 </body>
 </html>
