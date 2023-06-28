@@ -34,6 +34,8 @@ This README file provides an overview of the project and its features.
   
   *npm install --dependencies 
 
+  *npm run appstart
+
 You can access the application at 'https://localhost:5000'
 
 **Usage**
