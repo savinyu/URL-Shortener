@@ -18,15 +18,42 @@ app.set('view engine', 'ejs')
 
 app.use(express.urlencoded({extended: false}))
 
-app.get('/',async (req,res) =>{ 
+// app.get('/',async (req,res) =>{ 
 
-        const shortenedUrls = await ShortenedURL.find()
+//         const shortenedUrls = await ShortenedURL.find()
 
-    res.render('index',{ shortenedUrls: shortenedUrls})
-})
+//     res.render('index',{ shortenedUrls: shortenedUrls})
+// })
+
+app.get('/', async (req, res) => {
+    const searchQuery = req.query.search;
+  
+    try {
+      let query = {};
+  
+      if (searchQuery) {
+            query = { 
+                $or:[
+                   { notes : { $regex: searchQuery, $options: 'i' } },
+                   { full : { $regex: searchQuery, $options: 'i' } },
+                   { shortened : { $regex: searchQuery, $options: 'i' } }
+                ]
+                }
+        }
+  
+        const shortenedUrls = await ShortenedURL.find(query);
+  
+        res.render('index', { shortenedUrls : shortenedUrls });
+
+    } catch (error) {
+        console.error('Error occurred:', error);
+        res.status(500).send('Internal Server Error');
+    }
+  });
+  
 
 app.post('/shortenedUrls' ,async (req,res) =>{
-    const { fullUrl, notes } = req.body
+    const { fullUrl, notes } = req.body;
     await ShortenedURL.create({ notes,full: req.body.fullUrl})
         const shortenedUrl = new ShortenedURL({
             full: fullUrl,
