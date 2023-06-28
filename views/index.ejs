@@ -24,19 +24,31 @@
         <h1 class="text-center text-secondary"><b>URL Shortener</b> </h1>
         <form action="/shortenedUrls" method="POST" class="my-4 form-inline">
             <label for="fullUrl" class="visually-hidden">Your Url here</label>
-            <input required placeholder="Enter Link here" type="url" name="fullUrl" id="fullUrl" class="form-inline col-auto col-sm-7 col-form-label col-form-label-sm  " autocomplete="url">
+            <input required placeholder="Enter Link here" type="url" name="fullUrl" id="fullUrl" class="form-inline col-auto col-sm-7  col-form-label-sm  " autocomplete="url">
             <button class="btn btn-outline-success " type="submit">Shorten</button>
             <br><br>
             <label for="notes" > Notes</label>
-            <input type="text" name="notes" id="notes" placeholder="Enter Notes here:" class="form-inline form-control-sm">
+            <input type="text" name="notes" id="notes" placeholder="Enter Notes here:" class="form-inline form-control-sm ">
             <!-- <label for="notes" class=""> Notes :</label>   -->
             <!-- <input type="text" placeholder="Notes" name="notes" id="notes" class="form-label form-control-sm"> -->
             <!-- <img src="https://d19fbfhz0hcvd2.cloudfront.net/PR/wp-content/uploads/2016/09/10_UsingURLShorteners-1024x576.jpg" alt="scissors"> -->
         </form>
+        <div class="form-outline me-3 d-flex">
+
+            <form action="/" method="GET" class="form-inline ">
+                <label for="search" class="visually-hidden">Search</label>
+                <button class="btn  btn-outline-primary" type="submit" > Search</button>
+                <input type="text" placeholder="Search here" class="form-inline form-control-sm form-label  col-sm-7 " name="search" id="search" >
+                
+                
+                
+                <br>
+            </form>
+        </div>
     
     <table class="table table-striped table-hover table-bordered border-dark table-responsive-xxl table-info">
         
-        <caption> Data of all URLs</caption>
+        <caption> <b>Data of all URLs</b></caption>
         
         <thead>
             
